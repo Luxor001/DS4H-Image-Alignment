@@ -27,6 +27,7 @@ import ij.process.ColorProcessor;
 import ij.process.ImageProcessor;
 import loci.formats.UnknownFormatException;
 import org.scijava.AbstractContextual;
+import org.scijava.Context;
 import org.scijava.command.Command;
 import org.scijava.plugin.Plugin;
 
@@ -72,7 +73,7 @@ public class ImageAlignment extends AbstractContextual implements Command, OnMai
 	static private long TotalMemory = 0;
 	public static void main(final String... args) {
 		ImageJ ij = new ImageJ();
-		ij.ui().showUI();
+		ij.launch(args);
 		ImageAlignment plugin = new ImageAlignment();
 		plugin.setContext(ij.getContext());
 		plugin.run();
