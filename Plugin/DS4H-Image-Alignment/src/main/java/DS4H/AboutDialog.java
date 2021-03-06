@@ -161,15 +161,11 @@ public class AboutDialog extends JDialog {
         panel2.setAlignmentY(0.5f);
         panel1.add(panel2, BorderLayout.CENTER);
         final JLabel label1 = new JLabel();
-      //  Font label1Font = this.$$$getFont$$$(null, -1, 10, label1.getFont());
-    //    if (label1Font != null) label1.setFont(label1Font);
         label1.setHorizontalAlignment(10);
         label1.setText("Copyright (©) 2019 Data Science for Health (DS4H) Group. All rights reserved");
         panel2.add(label1, BorderLayout.NORTH);
         final JLabel label2 = new JLabel();
         label2.setAlignmentY(1.0f);
-      //  Font label2Font = this.$$$getFont$$$(null, -1, 10, label2.getFont());
-     //   if (label2Font != null) label2.setFont(label2Font);
         label2.setHorizontalAlignment(10);
         label2.setText("License: GNU General Public License version 3");
         panel2.add(label2, BorderLayout.SOUTH);
@@ -231,8 +227,6 @@ public class AboutDialog extends JDialog {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         pnl_title.add(lbl_version, gbc);
         final JLabel label3 = new JLabel();
-      //  Font label3Font = this.$$$getFont$$$("Droid Sans Mono", Font.PLAIN, 20, label3.getFont());
-      //  if (label3Font != null) label3.setFont(label3Font);
         label3.setForeground(new Color(-16777216));
         label3.setText("DS4H Image Aligment");
         gbc = new GridBagConstraints();
@@ -321,25 +315,6 @@ public class AboutDialog extends JDialog {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         pnl_authors.add(lbl_author1, gbc);
     }
-
-    /**
-     * @noinspection ALL
-     */
-/*    private Font $$$getFont$$$(String fontName, int style, int size, Font currentFont) {
-        if (currentFont == null) return null;
-        String resultName;
-        if (fontName == null) {
-            resultName = currentFont.getName();
-        } else {
-            Font testFont = new Font(fontName, Font.PLAIN, 10);
-            if (testFont.canDisplay('a') && testFont.canDisplay('1')) {
-                resultName = fontName;
-            } else {
-                resultName = currentFont.getName();
-            }
-        }
-        return new Font(resultName, style >= 0 ? style : currentFont.getStyle(), size >= 0 ? size : currentFont.getSize());
-    }*/
 
     /**
      * @noinspection ALL
