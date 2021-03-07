@@ -24,6 +24,7 @@ import ij.io.OpenDialog;
 import ij.io.SaveDialog;
 import ij.plugin.frame.RoiManager;
 import ij.process.ColorProcessor;
+import ij.process.ImageConverter;
 import ij.process.ImageProcessor;
 import io.scif.services.DatasetIOService;
 import loci.formats.UnknownFormatException;
@@ -337,7 +338,9 @@ public class ImageAlignment extends AbstractContextual implements Command, OnMai
 					transformedImagesStack = new ImagePlus("", virtualStack);
 					String filePath = IJ.getDir("temp") + transformedImagesStack.hashCode() + ".tiff";
 
+					new ImageConverter(transformedImagesStack).convertToRGB();
 					new FileSaver(transformedImagesStack).saveAsTiff(filePath);
+					System.gc();
 					tempImages.add(filePath);
 					this.loadingDialog.hideDialog();
 					alignDialog = new AlignDialog(transformedImagesStack, this);
